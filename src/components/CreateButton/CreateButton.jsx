@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TriviaAPI } from "../../api/trivia";
 import QuestionsList from "../QuestionsList/QuestionsList";
+import style from "./style.module.css";
 
 // Composant permettant de créer le bouton d'envoi
 export default function CreateButton({
@@ -37,7 +38,11 @@ export default function CreateButton({
 
   return (
     <>
-      <button id="createBtn" onClick={fetchQuestions}>
+      <button
+        className={style.createBtn}
+        id="createBtn"
+        onClick={fetchQuestions}
+      >
         Create
       </button>
       <div>

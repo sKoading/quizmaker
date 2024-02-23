@@ -15,6 +15,7 @@ export default function Category({ categories, onSelectCategory }) {
   return (
     <>
       <select
+        className={style.categorySelect}
         name="categories"
         id="categorySelect"
         onChange={handleSelectChange}

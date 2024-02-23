@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import style from "./style.module.css";
 // Composant permettant de selectionner la difficulté
 export default function Difficulty({ onHandleDifficultyChange }) {
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
@@ -12,6 +12,7 @@ export default function Difficulty({ onHandleDifficultyChange }) {
   return (
     <>
       <select
+        className={style.difficultySelect}
         name="difficulties"
         id="difficultySelect"
         onChange={handleSelectChange}

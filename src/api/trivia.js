@@ -2,7 +2,6 @@ import axios from "axios";
 import { CATEGORY_LIST } from "../config.js";
 
 // Création d'une class avec des fonctions statiques qui fait une requete axios à l'api afin de récupérer les données nécessaire
-
 export class TriviaAPI {
   // Requête pour récupérer les catégories disponibles pour pouvoir les affichers
   static async axiosCategories() {

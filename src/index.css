@@ -10,3 +10,19 @@ body {
   font-family: "Sono", sans-serif;
   padding: 48px 64px 0px;
 }
+
+select {
+  /*  Le style pour tous les éléments select*/
+  background-color: #f4f4f4;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  height: 47px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

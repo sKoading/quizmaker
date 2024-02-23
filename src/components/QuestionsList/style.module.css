@@ -1,4 +1,50 @@
 .highlighted {
-  /* Define highlighted button styles */
+  /* Définis le style pour les boutons mis en évidence */
+  border: none;
+
+  border-radius: 3px;
+  padding: 10px 10px;
+  font-size: 16px;
+  margin-left: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
   background-color: #00ff73; /* Highlighted background color */
+}
+
+.answerBtn {
+  border: none;
+
+  border-radius: 3px;
+  padding: 10px 10px;
+  font-size: 16px;
+  margin-left: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.answerList {
+  list-style-type: none;
+}
+
+.qAndAWrapper {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.submitBtn {
+  border: none;
+  background-color: #00d775;
+  color: white;
+  border-radius: 3px;
+  padding: 10px 10px;
+  width: 90px;
+  height: 47px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background: #01c56d;
 }

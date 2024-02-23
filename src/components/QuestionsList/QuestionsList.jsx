@@ -107,8 +107,8 @@ export default function QuestionsList({ questions }) {
     <>
       <ul>
         {questions.map((question, questionIndex) => (
-          <div key={questionIndex}>
-            <li>{question.question}</li>
+          <div className={style.qAndAWrapper} key={questionIndex}>
+            <li className={style.answerList}>{question.question}</li>
             {/* On utilise map ici pour créer les boutons et on s'assure d'abord que allAnswer existe bien en ajoutant la vérification conditionnelle allAnswers[questionIndex] &&, pour s'assurer que map n'est appelée que sur allAnswers[questionIndex] si il n'est pas définis. */}
             {allAnswers[questionIndex] &&
               allAnswers[questionIndex].map((answer, answerIndex) => (
@@ -118,7 +118,7 @@ export default function QuestionsList({ questions }) {
                     highlightedButtons[questionIndex] &&
                     highlightedButtons[questionIndex][answerIndex]
                       ? style.highlighted
-                      : ""
+                      : style.answerBtn
                   }
                   onClick={() => handleButtonClick(questionIndex, answerIndex)}
                 >
@@ -128,7 +128,11 @@ export default function QuestionsList({ questions }) {
           </div>
         ))}
       </ul>
-      {allQuestionsAnswered && <button onClick={handleClick}>Submit</button>}
+      {allQuestionsAnswered && (
+        <button className={style.submitBtn} onClick={handleClick}>
+          Submit
+        </button>
+      )}
     </>
   );
 }
