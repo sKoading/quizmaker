@@ -1,0 +1,28 @@
+.highlighted {
+  /* Define highlighted button styles */
+  background-color: #00ff73; /* Highlighted background color */
+}
+.correctAnswer {
+  /* Define the correct answer button style*/
+  background-color: #7dffb8;
+}
+
+.wrongAnswer {
+  /* Define the correct answer button style*/
+  background-color: #f05f69;
+}
+
+.bgCase1 {
+  background-color: #f05f69;
+  text-align: center;
+}
+
+.bgCase2 {
+  background-color: #e7ff7d;
+  color: black;
+}
+
+.bgCase3 {
+  background-color: #7dffb8;
+  color: black;
+}
