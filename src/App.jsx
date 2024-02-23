@@ -66,7 +66,7 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/"
+          path="/quizmaker"
           element={
             <>
               <Title />
