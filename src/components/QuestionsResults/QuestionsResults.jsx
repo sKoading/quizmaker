@@ -47,7 +47,7 @@ export default function QuestionsResults() {
 
   // Function to handle navigation to the "/" path
   const handleCreateNewQuiz = () => {
-    navigate("https://skoading.github.io/quizmaker"); // Navigate to the "/" path
+    navigate("/quizmaker"); // Navigate to the "/" path
   };
 
   return (
