@@ -1,7 +1,5 @@
-.highlighted {
-  /* Définis le style pour les boutons mis en évidence */
+button {
   border: none;
-
   border-radius: 3px;
   padding: 10px 10px;
   font-size: 16px;
@@ -9,19 +7,12 @@
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
-  background-color: #00ff73; /* Highlighted background color */
 }
 
-.answerBtn {
-  border: none;
+.highlighted {
+  /* Définis le style pour les boutons mis en évidence */
 
-  border-radius: 3px;
-  padding: 10px 10px;
-  font-size: 16px;
-  margin-left: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  background-color: #00ff73; /* Highlighted background color */
 }
 
 .answerList {

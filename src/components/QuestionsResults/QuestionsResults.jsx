@@ -10,8 +10,13 @@ export default function QuestionsResults() {
   const answerStatus = data.answerStatus;
   const questions = data.questions;
 
-  // Calculer le nombre de réponse juste
+  // On utilise la méthode reduce pour calculer le nombre total de réponses correctes
+  // Pour chaque question, on filtre les réponses pour ne garder que celles qui ont été cliquées et dont la valeur correspond à la réponse correcte.
+  // On compte le nombre de réponses correctes pour chaque question et on les ajoute à l'accumulateur.
+  // À la fin, on obtient le nombre total de réponses correctes dans numCorrectAnswers.
   const numCorrectAnswers = answerStatus.reduce(
+    // La fonction de rappel prend quatre paramètres : acc (accumulateur), answers (élément courant), questionIndex (indice de la question)
+
     (acc, answers, questionIndex) =>
       acc +
       answers.filter(
@@ -31,12 +36,18 @@ export default function QuestionsResults() {
     scoreColor = "bgCase3";
   }
 
+  // Fonction answerEvaluation pour déterminer la classe CSS à appliquer à un bouton de réponse en fonction de sa valeur et de sa conformité à la réponse correcte
   function answerEvaluation(clicked, value, correctAnswer) {
-    if (clicked && value === correctAnswer) {
+    // Si le bouton a été cliqué ou pas et que sa valeur correspond à la réponse correcte, on renvoie la classe CSS pour une réponse correcte
+    if (value === correctAnswer) {
       return style.correctAnswer;
-    } else if (clicked && value !== correctAnswer) {
+    }
+    // Si le bouton a été cliqué mais sa valeur ne correspond pas à la réponse correcte, on renvoie la classe CSS pour une réponse incorrecte
+    else if (clicked && value !== correctAnswer) {
       return style.wrongAnswer;
-    } else {
+    }
+    // Si le bouton n'a pas été cliqué, on ne renvoie aucune classe CSS (une chaîne vide) car aucune classe ne doit être appliquée
+    else {
       return ""; // Return an empty string if no class should be applied
     }
   }
@@ -55,7 +66,7 @@ export default function QuestionsResults() {
       <ul>
         {questions.map((question, questionIndex) => (
           <div key={questionIndex}>
-            <li>{question.question}</li>
+            <li className={style.answerList}>{question.question}</li>
             {answerStatus[questionIndex] &&
               answerStatus[questionIndex].map((answer, answerIndex) => (
                 <button
@@ -73,10 +84,12 @@ export default function QuestionsResults() {
         ))}
       </ul>
 
-      <p className={`${style[scoreColor]}`}>
+      <p className={`${style.score} ${style[scoreColor]}`}>
         You scored {numCorrectAnswers} out of {questions.length}
       </p>
-      <button onClick={handleCreateNewQuiz}>Create a new quiz</button>
+      <button className={style.newQuizBtn} onClick={handleCreateNewQuiz}>
+        Create a new quiz
+      </button>
     </div>
   );
 }

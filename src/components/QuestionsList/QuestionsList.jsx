@@ -118,7 +118,7 @@ export default function QuestionsList({ questions }) {
                     highlightedButtons[questionIndex] &&
                     highlightedButtons[questionIndex][answerIndex]
                       ? style.highlighted
-                      : style.answerBtn
+                      : ""
                   }
                   onClick={() => handleButtonClick(questionIndex, answerIndex)}
                 >
